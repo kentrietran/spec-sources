@@ -5,12 +5,14 @@
 }
 
 body {
-    background-color: #E5E5E5;
+    background-color: #F1F1F1;
 }
 
 .title-name {
     font-size: 40px;
     color: #36476D;
+    height: auto;
+    
 }
 
 .source_input {
