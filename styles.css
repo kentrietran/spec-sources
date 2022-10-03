@@ -1,0 +1,39 @@
+body {
+    background-color: #E5E5E5;
+}
+
+.bold_source_word {
+    color: #36476D;
+    font-weight: bold;
+}
+
+.light_source_word {
+    color: #828EA6;
+}
+
+.source_part {
+    border-radius: 25px;
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    width: 1293px;
+    height: 107px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.delete_source_button {
+    border-radius: 25px;
+    background-color: #FF7676;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    width: 166px;
+    height: 57px;
+    border-style: none;
+    font-size: 30px;
+    font-style: poppins;
+}
