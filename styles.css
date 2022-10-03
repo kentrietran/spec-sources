@@ -1,5 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+* {
+    font-family: "Poppins";
+}
+
 body {
     background-color: #E5E5E5;
+}
+
+.title-name {
+    font-size: 40px;
 }
 
 .bold_source_word {
