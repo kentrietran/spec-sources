@@ -21,9 +21,15 @@ body {
     width: 20%;
     margin: 2%;
 }
+
 .source_input {
-    border: white 5px solid;
-    padding: auto;
+    border: white 10px solid;
+    padding: auto 20%;
+    margin-left: 50px;
+}
+
+.source_title {
+    font-size: 26px;
 }
 
 .source_button {
@@ -32,7 +38,7 @@ body {
     color: #fff;
     border-radius: 10px;
     padding: 5px 30px;
-    font-size: 20px
+    font-size: 26px
 }
 
 .sourceBubble {
@@ -42,7 +48,12 @@ body {
     border-radius: 25px;
     display: flex;
     color: #fff;
-    align-items: space-between; /*why doesnt this work*/
+    flex-direction: row;
+}
+
+.source_element {
+    margin: auto;
+
 }
 
 .bold_source_word {
@@ -81,5 +92,4 @@ body {
     border-radius: 10px;
     padding: 5px 10px;
     font-size: 20px
-    font-style: poppins;
 }
