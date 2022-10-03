@@ -11,10 +11,16 @@ body {
 .title-name {
     font-size: 40px;
     color: #36476D;
-    height: auto;
+    margin: 2% 2% 2% 2%;
+    
     
 }
 
+.image {
+    height: auto;
+    width: 20%;
+    margin: 2%;
+}
 .source_input {
     border: white 5px solid;
     padding: auto;
@@ -36,7 +42,7 @@ body {
     border-radius: 25px;
     display: flex;
     color: #fff;
-    justify-content: space-between; /*why doesnt this work*/
+    align-items: space-between; /*why doesnt this work*/
 }
 
 .bold_source_word {
@@ -51,7 +57,6 @@ body {
 .source_part {
     border-radius: 25px;
     background-color: white;
-    text-align: center;
     padding: 20px;
     width: 1293px;
     height: 107px;
@@ -60,17 +65,21 @@ body {
     margin-right: auto;
     margin-bottom: 25px;
     margin-top: 25px;
+    align-items: center;
+    justify-content: space-between;
 }
 
+
+
+
 .delete_source_button {
-    border-radius: 25px;
     background-color: #FF7676;
-    text-align: center;
-    padding: 20px;
     color: white;
-    width: 166px;
-    height: 57px;
+    width: 10%;
+    height: auto;
     border-style: none;
-    font-size: 30px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 20px
     font-style: poppins;
 }
