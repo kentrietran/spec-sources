@@ -13,7 +13,10 @@ body {
     color: #36476D;
     margin: 2% 2% 2% 2%;
     
-    
+}
+
+.title {
+    margin-top: 0px;
 }
 
 .image {
@@ -24,7 +27,7 @@ body {
 
 .source_input {
     border: white 10px solid;
-    padding: auto 20%;
+    padding: 0px 50px;
     margin-left: 50px;
 }
 
@@ -37,8 +40,9 @@ body {
     background-color: #56C854;
     color: #fff;
     border-radius: 10px;
-    padding: 5px 30px;
-    font-size: 26px
+    padding: 5px 50px;
+    font-size: 26px;
+
 }
 
 .sourceBubble {
@@ -59,10 +63,16 @@ body {
 .bold_source_word {
     color: #36476D;
     font-weight: bold;
+    margin: auto;
+    font-size: 30px;
+    align-items: center;
 }
 
 .light_source_word {
     color: #828EA6;
+    margin: auto;
+    font-size: 30px;
+    align-items: left;
 }
 
 .source_part {
@@ -76,8 +86,7 @@ body {
     margin-right: auto;
     margin-bottom: 25px;
     margin-top: 25px;
-    align-items: center;
-    justify-content: space-between;
+    align-items: left;
 }
 
 
@@ -90,6 +99,7 @@ body {
     height: auto;
     border-style: none;
     border-radius: 10px;
-    padding: 5px 10px;
-    font-size: 20px
+    padding: 5px 15px;
+    font-size: 26px;
+    margin: auto;
 }
