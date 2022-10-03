@@ -10,6 +10,31 @@ body {
 
 .title-name {
     font-size: 40px;
+    color: #36476D;
+}
+
+.source_input {
+    border: white 5px solid;
+    padding: auto;
+}
+
+.source_button {
+    border: #56C854 1px solid;
+    background-color: #56C854;
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px 30px;
+    font-size: 20px
+}
+
+.sourceBubble {
+    background-color: #AFD7FA;
+    margin: 0px 50px;
+    padding: 50px 0px;
+    border-radius: 25px;
+    display: flex;
+    color: #fff;
+    justify-content: space-between; /*why doesnt this work*/
 }
 
 .bold_source_word {
