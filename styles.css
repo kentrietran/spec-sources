@@ -63,7 +63,8 @@ body {
 .bold_source_word {
     color: #36476D;
     font-weight: bold;
-    margin: auto;
+    margin-right: auto;
+    margin-left: 30px;
     font-size: 30px;
     align-items: center;
 }
@@ -96,10 +97,9 @@ body {
     background-color: #FF7676;
     color: white;
     width: 10%;
-    height: auto;
+    margin: auto 1rem auto auto;
     border-style: none;
     border-radius: 10px;
     padding: 5px 15px;
     font-size: 26px;
-    margin: auto;
 }
