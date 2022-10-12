@@ -1,5 +1,5 @@
 //import logo from './logo.svg';
-import Form from './Form';
+import List from './List';
 import Input from './Input';
 import './App.css';
 
@@ -18,7 +18,7 @@ function App() {
 
         {/*DO NOT CROSS THIS LINE*/}
         <div class="botton_body">
-            <Form></Form>
+            <List></List>
         </div>
         </body>
 
