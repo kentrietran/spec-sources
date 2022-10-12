@@ -6,9 +6,9 @@ const sourceList = [{name: "Presbo", email: "presbo@columbia.edu"},
 
 function List() {
     return(
-<div class="botton_body">
-    {sourceList.map((tagName, index) => (<ListItem index={index+1} name={tagName.name} email={tagName.email}></ListItem>))}
-</div>
+    <div class="botton_body">
+        {sourceList.map((tagName, index) => (<ListItem index={index+1} name={tagName.name} email={tagName.email}></ListItem>))}
+    </div>
     )
 }
 
