@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 import List from './List';
-import Input from './Input';
+import Form from './Form';
 import './App.css';
 import React, {useState} from 'react';
 
@@ -16,8 +16,10 @@ function App() {
         setSourceList(updatedList);
     }
 
-    function handleAdd() {
+    function handleAdd(sourceName, sourceEmail) {
+        const updatedList = [...sourceList, {name: sourceName, email: sourceEmail}];
 
+        setSourceList(updatedList);
     }
 
     return (
@@ -27,7 +29,7 @@ function App() {
         <div class="title">
             <p class="title-name">Spectator's Sources</p>
         </div>
-            <Input></Input>
+            <Form handleAdd={handleAdd}></Form>
         
         </center>
 
