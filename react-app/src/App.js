@@ -2,10 +2,25 @@
 import List from './List';
 import Input from './Input';
 import './App.css';
+import React, {useState} from 'react';
+
+const initialList = [{name: "Presbo", email: "presbo@columbia.edu"},
+    {name: "John Jay Mouse", email: "mouse@columbia.edu"},
+    {name: "Water Bottle Man", email: "flipper@columbia.edu"}]
 
 function App() {
-  return (
-    
+    const [sourceList, setSourceList] = useState(initialList)
+
+    function handleDelete(sourceIndex) {
+        const updatedList = sourceList.slice(0, sourceIndex).concat(sourceList.slice(sourceIndex + 1));
+        setSourceList(updatedList);
+    }
+
+    function handleAdd() {
+
+    }
+
+    return (
         <body>
         <img class="image" src="https://clubs-cu.s3.amazonaws.com/Spectator+Publishing+Logo.png" alt="spec"/>
         <center>
@@ -18,7 +33,7 @@ function App() {
 
         {/*DO NOT CROSS THIS LINE*/}
         <div class="botton_body">
-            <List></List>
+            <List sourceList={sourceList} handleDelete={handleDelete}></List>
         </div>
         </body>
 
