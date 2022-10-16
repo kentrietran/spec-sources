@@ -1,7 +1,7 @@
 import "./App.css";
 import React, {useState} from 'react';
 
-function Form(handleAdd) {
+function Form({handleAdd}) {
     
     const [sourceName, setSourceName] = useState("");
     const [sourceEmail, setSourceEmail] = useState("");
