@@ -1,18 +1,41 @@
 const data = require("../data");
 
 module.exports = {
-    hello: (req, res) => {
-        res.json({"message": "Hello World!"});
-    },
-    sources: (req, res) => {
-        res.json({"message": "Sources Snatched (success!)", data: data.sources});
-    },
     add_source: (req, res) => {
-        data.sources.push(req.body.source);
-        res.json({"message": "Sources Added", data: data.sources});
+        sources.create(req.body.source)
+        .then(sourcesData =>{
+            console.log(sourcesData);
+            res.json({"message": "OK2", data: sourcesData});
+        })
+        .catch(err=>{
+            console.log(err);
+            res.json(err);
+        })
+    },
+    sources: (req,res)=>{
+        sources.find({})
+        .then(sourcesData => {
+            console.log(sourcesData);
+            res.json({"message": "HELLO", data: sourcesData});
+        })
+        .catch(err=>{
+            console.log(err);
+            res.json(err);
+        })
+        
+    },
+    testing: (req,res) =>{
+        res.json({"message": "WORKING"})
     },
     delete_source: (req, res) => {
-        data.sources = data.sources.filter(c => c.id !== req.params.id);
-        res.json({"message": "Sources Deleted", data: data.sources});
-    }
+        sources.findOneAndDelete({id: req.params.id})
+        .then(sourcesData =>{
+            console.log(sourcesData);
+            res.json({"message":"WORKING", data: sourcesData})
+        })
+        .catch(err=>{
+            console.log(err);
+            res.json(err);
+        })
+    },
 };
