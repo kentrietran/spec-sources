@@ -1,5 +1,4 @@
 const data = require("../data");
-
 module.exports = {
     hello: (req, res) => {
         res.json({"message": "Hello World!"});
@@ -12,7 +11,7 @@ module.exports = {
         res.json({"message": "Sources Added", data: data.sources});
     },
     delete_source: (req, res) => {
-        data.sources = data.sources.filter(c => c.id !== req.params.id);
+        data.sources = data.sources.filter(delete => delete.id!==req.params.id);
         res.json({"message": "Sources Deleted", data: data.sources});
     }
 };
