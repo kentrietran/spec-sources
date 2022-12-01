@@ -10,6 +10,33 @@ const initialList = [{name: "Presbo", email: "presbo@columbia.edu"},
 
 function App() {
     const [sourceList, setSourceList] = useState(initialList)
+    const [loading, setLoading] = useState[true];
+
+    useEffect(() => {
+        fetch("api/sources",  {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if(response.status >= 200 && response.status < 300) {
+                return response;
+            }
+            throw response;
+        })
+        .then(response => response.json())
+        .then(json => {
+            console.log(json);
+            setSourceList(json.data);
+        })
+        .catch(error => console.log(error))
+        .finally( () => {
+            setLoading(false);
+        })
+    })
+
+    
 
     function handleDelete(sourceIndex) {
         const updatedList = sourceList.slice(0, sourceIndex).concat(sourceList.slice(sourceIndex + 1));

@@ -25,9 +25,7 @@ module.exports = {
         })
         
     },
-    testing: (req,res) =>{
-        res.json({"message": "WORKING"})
-    },
+    
     delete_source: (req, res) => {
         sources.findOneAndDelete({id: req.params.id})
         .then(sourcesData =>{
