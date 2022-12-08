@@ -10,6 +10,6 @@ const sourceSchema = new Schema({
     email: { type: String, required: true }
 })
 
-const sources = mongoose.model('spec_sources', sourceSchema);
+const sources = mongoose.model('sources', sourceSchema);
 
 module.exports = sources;
