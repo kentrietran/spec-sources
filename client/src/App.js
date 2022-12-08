@@ -36,6 +36,54 @@ function App() {
         })
     })
 
+    useEffect(() => {
+        fetch("api/add_source",  {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if(response.status >= 200 && response.status < 300) {
+                return response;
+            }
+            throw response;
+        })
+        .then(response => response.json())
+        .then(json => {
+            console.log(json);
+            setSourceList(json.data);
+        })
+        .catch(error => console.log(error))
+        .finally( () => {
+            setLoading(false);
+        })
+    })
+
+    useEffect(() => {
+        fetch("api/delete_source/:id",  {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if(response.status >= 200 && response.status < 300) {
+                return response;
+            }
+            throw response;
+        })
+        .then(response => response.json())
+        .then(json => {
+            console.log(json);
+            setSourceList(json.data);
+        })
+        .catch(error => console.log(error))
+        .finally( () => {
+            setLoading(false);
+        })
+    })
+
     
 
     function handleDelete(sourceIndex) {
