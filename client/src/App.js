@@ -5,16 +5,13 @@ import './App.css';
 import React, {useState, useEffect} from 'react';
 
 
-const initialList = [{name: "Presbo", email: "presbo@columbia.edu"},
-    {name: "John Jay Mouse", email: "mouse@columbia.edu"},
-    {name: "Water Bottle Man", email: "flipper@columbia.edu"}]
+const initialList = []
 
 function App() {
     const [sourceList, setSourceList] = useState(initialList)
-    const [loading, setLoading] = useState[true];
 
     useEffect(() => {
-        fetch("api/sources",  {
+        fetch("http://localhost:8080/api/sources",  {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -32,13 +29,40 @@ function App() {
             setSourceList(json.data);
         })
         .catch(error => console.log(error))
-        .finally( () => {
-            setLoading(false);
-        })
-    })
+    }, []);
 
-    useEffect(() => {
-        fetch("api/add_source",  {
+
+
+    
+
+    function handleDelete(sourceIndex) {
+        const updatedList = sourceList.slice(0, sourceIndex).concat(sourceList.slice(sourceIndex + 1));
+        setSourceList(updatedList);
+
+        fetch("http://localhost:8080/api/delete_source/:id",  {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if(response.status >= 200 && response.status < 300) {
+                return response;
+            }
+            throw response;
+        })
+        .then(response => response.json())
+        .then(json => {
+            console.log(json);
+            setSourceList(json.data);
+        })
+        .catch(error => console.log(error))
+    }
+
+    function handleAdd(sourceName, sourceEmail) {
+        const updatedList = [...sourceList, {name: sourceName, email: sourceEmail}];
+
+        fetch("http://localhost:8080/api/add_source",  {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -53,49 +77,14 @@ function App() {
         .then(response => response.json())
         .then(json => {
             console.log(json);
-            setSourceList(json.data);
+            setSourceList(updatedList);
         })
         .catch(error => console.log(error))
-        .finally( () => {
-            setLoading(false);
-        })
-    })
 
-    useEffect(() => {
-        fetch("api/delete_source/:id",  {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => {
-            if(response.status >= 200 && response.status < 300) {
-                return response;
-            }
-            throw response;
-        })
-        .then(response => response.json())
-        .then(json => {
-            console.log(json);
-            setSourceList(json.data);
-        })
-        .catch(error => console.log(error))
-        .finally( () => {
-            setLoading(false);
-        })
-    })
 
-    
+        
 
-    function handleDelete(sourceIndex) {
-        const updatedList = sourceList.slice(0, sourceIndex).concat(sourceList.slice(sourceIndex + 1));
-        setSourceList(updatedList);
-    }
-
-    function handleAdd(sourceName, sourceEmail) {
-        const updatedList = [...sourceList, {name: sourceName, email: sourceEmail}];
-
-        setSourceList(updatedList);
+        
     }
 
     return (
